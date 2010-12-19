@@ -1,6 +1,13 @@
 function exercise1(path,number_of_channels)
 
-input = imread(path);
+%If path is a file path, load the image at that path, otherwise, if it is
+%an array of class uint8, assume it is an image
+if ischar(path)
+    input = imread(path);
+else
+    input = path;
+end
+
 actual_number_of_channels = length(input(1,1,:));
 %If the user specifies too many colour channels, throw informative
 %exception and exit
