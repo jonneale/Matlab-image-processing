@@ -1,0 +1,8 @@
+function exercise1(path,number_of_channels)
+    input = imread(path);
+
+    for i=1:number_of_channels
+        subplot(2,number_of_channels,i), imshow(input(:,:,i));
+        subplot(2,number_of_channels,i+number_of_channels), imhist(input(:,:,i));
+    end
+end
